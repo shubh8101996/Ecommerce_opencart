@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-04T19:32:25 IST" name="Default suite" finished-at="2023-11-04T19:32:38 IST" duration-ms="13466">
+  <suite started-at="2023-11-07T15:09:20 IST" name="Default suite" finished-at="2023-11-07T15:09:33 IST" duration-ms="13801">
     <groups>
     </groups>
-    <test started-at="2023-11-04T19:32:25 IST" name="Default test" finished-at="2023-11-04T19:32:38 IST" duration-ms="13466">
+    <test started-at="2023-11-07T15:09:20 IST" name="Default test" finished-at="2023-11-07T15:09:33 IST" duration-ms="13801">
       <class name="com.test.TC_RF_001">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_RF_001@712625fd]" started-at="2023-11-04T19:32:25 IST" name="browserSetup" finished-at="2023-11-04T19:32:29 IST" duration-ms="3469" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_RF_001@33065d67]" started-at="2023-11-07T15:09:20 IST" name="browserSetup" finished-at="2023-11-07T15:09:23 IST" duration-ms="3759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="test1()[pri:0, instance:com.test.TC_RF_001@712625fd]" started-at="2023-11-04T19:32:29 IST" name="test1" description="Validate Registering an Account by providing only the Mandatory fields" finished-at="2023-11-04T19:32:38 IST" duration-ms="9582" status="FAIL">
+        <test-method signature="test1()[pri:0, instance:com.test.TC_RF_001@33065d67]" started-at="2023-11-07T15:09:23 IST" name="test1" description="Validate Registering an Account by providing only the Mandatory fields" finished-at="2023-11-07T15:09:33 IST" duration-ms="9866" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Text mismatch:  expected [Your Account Has Been Created!] but found [Register Account]]]>
@@ -59,41 +59,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="tearUp(org.testng.ITestResult)[pri:0, instance:com.test.TC_RF_001@712625fd]" started-at="2023-11-04T19:32:38 IST" name="tearUp" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1699106558655" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can inject only one of <ITestContext, XmlTest> into a @AfterTest annotated tearUp.
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can inject only one of <ITestContext, XmlTest> into a @AfterTest annotated tearUp.
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:436)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:350)
-at org.testng.internal.Parameters.createParameters(Parameters.java:693)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:306)
-at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:663)
-at org.testng.TestRunner.afterRun(TestRunner.java:933)
-at org.testng.TestRunner.run(TestRunner.java:624)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.test.TC_RF_001@33065d67]" started-at="2023-11-07T15:09:33 IST" name="tearUp" finished-at="2023-11-07T15:09:33 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearUp -->

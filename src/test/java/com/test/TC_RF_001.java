@@ -27,7 +27,7 @@ public class TC_RF_001 extends Base {
 		Utility.clickElement(driver, nav.Register, 10);
 
 		register.enterCredentials();
-//		Utility.captureScreenshot(driver, "Validate Registering an Account by providing only the Mandatory fields");
+		Utility.captureScreenshot(driver, "Validate Registering an Account by providing only the Mandatory fields");
 
 //		Utility.clickElement(driver, register.Privacy);
 		Utility.clickElement(driver, register.ContinueBtn);

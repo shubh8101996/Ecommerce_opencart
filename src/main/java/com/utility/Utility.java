@@ -150,7 +150,7 @@ public class Utility {
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
 				String timestamp = dateFormat.format(new Date());
 
-				String screenshotDirectory = System.getProperty("user.dir")+"\\screenshot\\";
+				String screenshotDirectory = System.getProperty("user.dir") + "\\screenshot\\";
 
 				File directory = new File(screenshotDirectory);
 				if (!directory.exists()) {

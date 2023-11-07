@@ -47,11 +47,16 @@ public class Base {
 			throw new Exception("Invalid Browser Value");
 		}
 	}
+	
+	
+	 public static WebDriver getDriver() {
+	        return driver;
+	    }
 
 	@AfterTest
-	public void tearUp(ITestResult result) {
+	public void tearUp() {
 
-		driver.quit();
+//		driver.quit();
 	}
 
 }
