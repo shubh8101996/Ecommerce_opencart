@@ -171,4 +171,47 @@ public class Utility {
 		}
 	}
 
+	public static String[] readRowWithFlagY(String filePath, String sheetName, String flagVal) {
+		try (FileInputStream fis = new FileInputStream(new File(filePath)); Workbook workbook = new XSSFWorkbook(fis)) {
+
+			Sheet sheet = workbook.getSheet(sheetName);
+
+			for (int rowNum = 1; rowNum <= sheet.getLastRowNum(); rowNum++) {
+				Row row = sheet.getRow(rowNum);
+				if (row != null) {
+					Cell flagCell = row.getCell(0); // Assuming the flag is in the first column (0-based index)
+
+					if (flagCell != null && flagCell.getCellType() == CellType.STRING) {
+						String flag = flagCell.getStringCellValue();
+
+						if (flagVal.equalsIgnoreCase(flag)) {
+							int lastColNum = row.getLastCellNum();
+							String[] rowData = new String[lastColNum - 1]; // Excluding the flag column
+							int rowDataIndex = 0;
+
+							for (int colNum = 1; colNum < lastColNum; colNum++) {
+								Cell dataCell = row.getCell(colNum);
+
+								if (dataCell != null) {
+									if (dataCell.getCellType() == CellType.STRING) {
+										rowData[rowDataIndex] = dataCell.getStringCellValue();
+									} else if (dataCell.getCellType() == CellType.NUMERIC) {
+										rowData[rowDataIndex] = String.valueOf(dataCell.getNumericCellValue());
+									}
+									rowDataIndex++;
+								}
+							}
+
+							return rowData;
+						}
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return null; // Return null if no row with the flag "Y" is found
+	}
+
 }

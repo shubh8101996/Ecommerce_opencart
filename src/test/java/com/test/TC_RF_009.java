@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.base.Base;
 import com.page_class.NavBar_Page;
 import com.page_class.Register_Page;
-import com.utility.ExtentReportListener;
+import com.reports.ExtentReportListener;
 import com.utility.Utility;
 
 @Listeners(ExtentReportListener.class)
@@ -14,6 +14,7 @@ public class TC_RF_009 extends Base {
 
 	Register_Page register;
 	NavBar_Page nav;
+	String filepth = System.getProperty("user.dir") + "\\test_data\\excel_sheet_data\\test_data.xlsx";
 
 	@Test(description = "Validate Registering an Account by providing the existing account details ")
 	public void test1() throws InterruptedException {
@@ -27,7 +28,7 @@ public class TC_RF_009 extends Base {
 		Utility.clickElement(driver, nav.MyAccount, 20);
 		Utility.clickElement(driver, nav.Register, 10);
 
-		register.enterCredentials();
+		register.enterCredentials("N");
 		Utility.clickElement(driver, register.Privacy);
 		Utility.clickElement(driver, register.ContinueBtn);
 		Utility.assertElementPresent(driver, register.alert, 10);

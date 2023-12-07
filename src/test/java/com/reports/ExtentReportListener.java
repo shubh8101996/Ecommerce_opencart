@@ -1,10 +1,9 @@
-package com.utility;
+package com.reports;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -21,7 +20,6 @@ public class ExtentReportListener implements ITestListener {
 
 	private ExtentReports extent = ExtentManager.createExtentInstance();
 	private ExtentTest test;
-	
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -36,7 +34,7 @@ public class ExtentReportListener implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.log(Status.FAIL, "Test Failed");
-        WebDriver driver = Base.getDriver();
+		WebDriver driver = Base.getDriver();
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
@@ -48,6 +46,7 @@ public class ExtentReportListener implements ITestListener {
 		File dest = new File(screenshotFilePath);
 		try {
 			FileUtils.copyFile(src, dest);
+			test.addScreenCaptureFromPath(screenshotFilePath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

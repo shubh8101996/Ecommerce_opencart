@@ -1,30 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-07T15:09:20 IST" name="Default suite" finished-at="2023-11-07T15:09:33 IST" duration-ms="13801">
+  <suite started-at="2023-11-08T19:35:44 IST" name="Suite" finished-at="2023-11-08T19:36:24 IST" duration-ms="40448">
     <groups>
     </groups>
-    <test started-at="2023-11-07T15:09:20 IST" name="Default test" finished-at="2023-11-07T15:09:33 IST" duration-ms="13801">
+    <test started-at="2023-11-08T19:35:44 IST" name="Test" finished-at="2023-11-08T19:36:24 IST" duration-ms="40448">
       <class name="com.test.TC_RF_001">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_RF_001@33065d67]" started-at="2023-11-07T15:09:20 IST" name="browserSetup" finished-at="2023-11-07T15:09:23 IST" duration-ms="3759" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_RF_001@52e7a6b2]" started-at="2023-11-08T19:35:44 IST" name="browserSetup" finished-at="2023-11-08T19:35:47 IST" duration-ms="3419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="test1()[pri:0, instance:com.test.TC_RF_001@33065d67]" started-at="2023-11-07T15:09:23 IST" name="test1" description="Validate Registering an Account by providing only the Mandatory fields" finished-at="2023-11-07T15:09:33 IST" duration-ms="9866" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="test1()[pri:0, instance:com.test.TC_RF_001@52e7a6b2]" started-at="2023-11-08T19:35:47 IST" name="test1" description="Validate Registering an Account by providing only the Mandatory fields" finished-at="2023-11-08T19:35:57 IST" duration-ms="10221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.test.TC_RF_001@52e7a6b2]" started-at="2023-11-08T19:35:57 IST" name="tearUp" finished-at="2023-11-08T19:35:58 IST" duration-ms="477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+      </class> <!-- com.test.TC_RF_001 -->
+      <class name="com.test.TC_LF_001">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_LF_001@1e4d3ce5]" started-at="2023-11-08T19:36:15 IST" name="browserSetup" finished-at="2023-11-08T19:36:16 IST" duration-ms="1460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="test1()[pri:0, instance:com.test.TC_LF_001@1e4d3ce5]" started-at="2023-11-08T19:36:16 IST" name="test1" description="Validate logging into the Application using valid credentials" finished-at="2023-11-08T19:36:24 IST" duration-ms="7474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.test.TC_LF_001@1e4d3ce5]" started-at="2023-11-08T19:36:24 IST" name="tearUp" finished-at="2023-11-08T19:36:24 IST" duration-ms="387" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+      </class> <!-- com.test.TC_LF_001 -->
+      <class name="com.test.TC_RF_004">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_RF_004@4b5189ac]" started-at="2023-11-08T19:36:06 IST" name="browserSetup" finished-at="2023-11-08T19:36:08 IST" duration-ms="1383" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="test1()[pri:0, instance:com.test.TC_RF_004@4b5189ac]" started-at="2023-11-08T19:36:08 IST" name="test1" description="Validate proper notification messages are displayed for the mandatory fields, when you don&#039;t provide any fields in the &#039;Register Account&#039; page and submit" finished-at="2023-11-08T19:36:14 IST" duration-ms="6769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.test.TC_RF_004@4b5189ac]" started-at="2023-11-08T19:36:14 IST" name="tearUp" finished-at="2023-11-08T19:36:15 IST" duration-ms="344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+      </class> <!-- com.test.TC_RF_004 -->
+      <class name="com.test.TC_RF_009">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.test.TC_RF_009@4f704591]" started-at="2023-11-08T19:35:58 IST" name="browserSetup" finished-at="2023-11-08T19:35:59 IST" duration-ms="1432" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="test1()[pri:0, instance:com.test.TC_RF_009@4f704591]" started-at="2023-11-08T19:35:59 IST" name="test1" description="Validate Registering an Account by providing the existing account details " finished-at="2023-11-08T19:36:05 IST" duration-ms="6121" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Text mismatch:  expected [Your Account Has Been Created!] but found [Register Account]]]>
+              <![CDATA[Cannot load from object array because "rowData" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Text mismatch:  expected [Your Account Has Been Created!] but found [Register Account]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at com.utility.Utility.assertTextEqualsByElementText(Utility.java:87)
-at com.test.TC_RF_001.test1(TC_RF_001.java:34)
+              <![CDATA[java.lang.NullPointerException: Cannot load from object array because "rowData" is null
+at com.page_class.Register_Page.enterCredentials(Register_Page.java:63)
+at com.test.TC_RF_009.test1(TC_RF_009.java:31)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,15 +92,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.test.TC_RF_001@33065d67]" started-at="2023-11-07T15:09:33 IST" name="tearUp" finished-at="2023-11-07T15:09:33 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.test.TC_RF_009@4f704591]" started-at="2023-11-08T19:36:06 IST" name="tearUp" finished-at="2023-11-08T19:36:06 IST" duration-ms="403" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearUp -->
-      </class> <!-- com.test.TC_RF_001 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.test.TC_RF_009 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

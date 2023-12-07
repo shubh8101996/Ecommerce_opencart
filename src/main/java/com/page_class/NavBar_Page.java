@@ -6,10 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class NavBar_Page {
-	
 
 	WebDriver driver;
-	
 
 	@FindBy(xpath = "//span[text()='My Account']")
 	public WebElement MyAccount;
@@ -25,11 +23,5 @@ public class NavBar_Page {
 		PageFactory.initElements(driver, this);
 
 	}
-	
-	
-	
-	
-	
-	
 
 }

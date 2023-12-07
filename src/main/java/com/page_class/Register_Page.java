@@ -13,7 +13,7 @@ public class Register_Page {
 
 	String filepth = System.getProperty("user.dir") + "\\test_data\\excel_sheet_data\\test_data.xlsx";
 
-	@FindBy(xpath = "//h1[text()='Register Account']")
+	@FindBy(xpath = "//h1[text()='Your Account Has Been Created!']")
 	public WebElement Heading;
 
 	@FindBy(id = "input-firstname")
@@ -48,26 +48,23 @@ public class Register_Page {
 
 	@FindBy(id = "error-password")
 	public WebElement errorPassword;
-	
+
 	@FindBy(xpath = "//*[contains(text(),' Warning: E-Mail Address is already registered!')]")
-	public WebElement alert; 
+	public WebElement alert;
 
 	public Register_Page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterCredentials() {
+	public void enterCredentials(String flagVal) {
 
-		Utility.sendKeys(driver, first_name, Utility.readExcelData(filepth, "registerTestData", 3, 1), 30);
-		Utility.sendKeys(driver, last_name, Utility.readExcelData(filepth, "registerTestData", 3, 2), 30);
-		Utility.sendKeys(driver, email, Utility.readExcelData(filepth, "registerTestData", 3, 3), 30);
-		Utility.sendKeys(driver, password, Utility.readExcelData(filepth, "registerTestData", 3, 4), 30);
-
+		String[] rowData = Utility.readRowWithFlagY(filepth, "registerTestData",flagVal);
+		Utility.sendKeys(driver, first_name, rowData[0], 10);
+		Utility.sendKeys(driver, last_name, rowData[1], 10);
+		Utility.sendKeys(driver, email, rowData[2], 10);
+		Utility.sendKeys(driver, password, rowData[3], 10);
 	}
-	
-	
-	
 	
 	
 

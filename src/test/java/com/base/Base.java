@@ -6,7 +6,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import com.utility.ReadProperties_Utility;
@@ -22,7 +24,7 @@ public class Base {
 	public String username = read.getUsername();
 	public String password = read.getPassword();
 
-	@BeforeTest
+	@BeforeClass(alwaysRun = true)
 	public void browserSetup() throws Exception {
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
@@ -47,16 +49,15 @@ public class Base {
 			throw new Exception("Invalid Browser Value");
 		}
 	}
-	
-	
-	 public static WebDriver getDriver() {
-	        return driver;
-	    }
 
-	@AfterTest
+	public static WebDriver getDriver() {
+		return driver;
+	}
+	
+
+	@AfterClass(alwaysRun = true)
 	public void tearUp() {
-
-//		driver.quit();
+		driver.quit();
 	}
 
 }
