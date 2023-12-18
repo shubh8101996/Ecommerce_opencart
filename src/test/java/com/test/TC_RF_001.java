@@ -16,7 +16,7 @@ public class TC_RF_001 extends Base {
 	String filepth = System.getProperty("user.dir") + "\\test_data\\excel_sheet_data\\test_data.xlsx";
 
 	@Test(description = "Validate Registering an Account by providing only the Mandatory fields")
-	public void test1() throws InterruptedException {
+	public void tc_rf_001() throws InterruptedException {
 
 		register = new Register_Page(driver);
 		nav = new NavBar_Page(driver);

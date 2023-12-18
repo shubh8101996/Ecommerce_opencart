@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.utility.Utility;
 
 public class Login_Page {
@@ -27,11 +26,10 @@ public class Login_Page {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterCredLogin(String flagVal) {
+	public void enterCredLogin() {
 
-		String[] rowData = Utility.readRowWithFlagY(filepth, "loginTestData", flagVal);
-		Utility.sendKeys(driver, email, rowData[0], 10);
-		Utility.sendKeys(driver, password, rowData[1], 10);
+		Utility.sendKeys(driver, email, Utility.getPropertyDirectly("username"), 10);
+		Utility.sendKeys(driver, password, Utility.getPropertyDirectly("password"), 10);
 
 	}
 

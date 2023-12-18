@@ -14,7 +14,7 @@ public class TC_RF_004 extends Base {
 
 	@Test(description = "Validate proper notification messages are displayed for the mandatory fields, when you "
 			+ "don't provide any fields in the " + "'Register Account' page and submit")
-	public void test1() throws InterruptedException {
+	public void tc_rf_004() throws InterruptedException {
 
 		register = new Register_Page(driver);
 		nav = new NavBar_Page(driver);

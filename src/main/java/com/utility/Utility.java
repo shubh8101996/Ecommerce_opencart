@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.Properties;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -30,8 +32,28 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.nio.file.Paths;
+
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 
 public class Utility {
+
+	public static String getPropertyDirectly(String key) {
+		Properties properties = new Properties();
+		try {
+			FileInputStream file = new FileInputStream(
+					System.getProperty("user.dir") + "\\test_data\\properties_file\\env_config.properties");
+			properties.load(file);
+			return properties.getProperty(key);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null; // Handle the exception according to your needs
+		}
+	}
 
 	public static void setImplicitWait(WebDriver driver, int timeoutInSeconds) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeoutInSeconds));
@@ -141,7 +163,7 @@ public class Utility {
 		return cellValue;
 	}
 
-	public static void captureScreenshot(WebDriver driver, String testName) {
+	public static String captureScreenshotOnDesktop(WebDriver driver, String testName) {
 		try {
 			if (driver instanceof TakesScreenshot) {
 				TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
@@ -150,8 +172,8 @@ public class Utility {
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
 				String timestamp = dateFormat.format(new Date());
 
-				String screenshotDirectory = System.getProperty("user.dir") + "\\screenshot\\";
-
+				String screenshotDirectory = Paths.get(System.getProperty("user.home"), "Desktop", "screenshots")
+						.toString() + "\\";
 				File directory = new File(screenshotDirectory);
 				if (!directory.exists()) {
 					directory.mkdirs();
@@ -163,12 +185,14 @@ public class Utility {
 
 				System.out.println("Screenshot saved as: " + screenshotFilePath);
 
+				return screenshotFilePath;
 			} else {
 				System.out.println("Driver does not support taking screenshots.");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return null; // Return null if unable to capture screenshot
 	}
 
 	public static String[] readRowWithFlagY(String filePath, String sheetName, String flagVal) {
@@ -212,6 +236,27 @@ public class Utility {
 		}
 
 		return null; // Return null if no row with the flag "Y" is found
+	}
+
+	public static String getTestMethodDescription(Class<?> testClass, String methodName) {
+		try {
+			// Get the test method using reflection
+			Method testMethod = testClass.getMethod(methodName);
+
+			// Get the Test annotation
+			Annotation annotation = testMethod.getAnnotation(Test.class);
+
+			// Check if the Test annotation is present
+			if (annotation instanceof Test) {
+				// Cast the annotation to Test and get the description
+				return ((Test) annotation).description();
+			} else {
+				return "Test annotation not found";
+			}
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+			return "Method not found: " + methodName;
+		}
 	}
 
 }

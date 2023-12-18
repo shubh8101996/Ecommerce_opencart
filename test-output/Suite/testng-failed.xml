@@ -6,11 +6,18 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="com.test.TC_RF_001">
+        <methods>
+          <include name="tearUp"/>
+          <include name="browserSetup"/>
+          <include name="tc_rf_001"/>
+        </methods>
+      </class> <!-- com.test.TC_RF_001 -->
       <class name="com.test.TC_RF_009">
         <methods>
           <include name="tearUp"/>
           <include name="browserSetup"/>
-          <include name="test1"/>
+          <include name="tc_rf_009"/>
         </methods>
       </class> <!-- com.test.TC_RF_009 -->
     </classes>

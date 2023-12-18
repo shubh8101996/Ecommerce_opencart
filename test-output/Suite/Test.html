@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 08 19:35:44 IST 2023</td>
+<td>Started on:</td><td>Sun Dec 10 14:22:56 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>40 seconds (40448 ms)</td>
+<tr><td>Total time:</td><td>56 seconds (56046 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,56 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.test.TC_RF_009.test1()'><b>test1</b><br>Test class: com.test.TC_RF_009<br>Test method: Validate Registering an Account by providing the existing account details </td>
-<td><div><pre>java.lang.NullPointerException: Cannot load from object array because &quot;rowData&quot; is null
-	at com.page_class.Register_Page.enterCredentials(Register_Page.java:63)
-	at com.test.TC_RF_009.test1(TC_RF_009.java:31)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace633226335", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace633226335'><pre>java.lang.NullPointerException: Cannot load from object array because &quot;rowData&quot; is null
-	at com.page_class.Register_Page.enterCredentials(Register_Page.java:63)
-	at com.test.TC_RF_009.test1(TC_RF_009.java:31)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>6</td>
-<td>com.test.TC_RF_009@4f704591</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -126,20 +76,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.TC_RF_004.test1()'><b>test1</b><br>Test class: com.test.TC_RF_004<br>Test method: Validate proper notification messages are displayed for the mandatory fields, when you don't provide any fields in the 'Register Account' page and submit</td>
+<td title='com.test.TC_RF_009.tc_rf_009()'><b>tc_rf_009</b><br>Test class: com.test.TC_RF_009<br>Test method: Validate Registering an Account by providing the existing account details </td>
 <td></td>
 <td>6</td>
-<td>com.test.TC_RF_004@4b5189ac</td></tr>
+<td>com.test.TC_RF_009@3ddc6915</td></tr>
 <tr>
-<td title='com.test.TC_LF_001.test1()'><b>test1</b><br>Test class: com.test.TC_LF_001<br>Test method: Validate logging into the Application using valid credentials</td>
+<td title='com.test.TC_RF_004.tc_rf_004()'><b>tc_rf_004</b><br>Test class: com.test.TC_RF_004<br>Test method: Validate proper notification messages are displayed for the mandatory fields, when you don't provide any fields in the 'Register Account' page and submit</td>
 <td></td>
-<td>7</td>
-<td>com.test.TC_LF_001@1e4d3ce5</td></tr>
+<td>6</td>
+<td>com.test.TC_RF_004@704deff2</td></tr>
 <tr>
-<td title='com.test.TC_RF_001.test1()'><b>test1</b><br>Test class: com.test.TC_RF_001<br>Test method: Validate Registering an Account by providing only the Mandatory fields</td>
+<td title='com.test.TC_LF_001.tc_lf_001()'><b>tc_lf_001</b><br>Test class: com.test.TC_LF_001<br>Test method: Validate logging into the Application using valid credentials</td>
 <td></td>
-<td>10</td>
-<td>com.test.TC_RF_001@52e7a6b2</td></tr>
+<td>6</td>
+<td>com.test.TC_LF_001@379614be</td></tr>
+<tr>
+<td title='com.test.TC_RF_001.tc_rf_001()'><b>tc_rf_001</b><br>Test class: com.test.TC_RF_001<br>Test method: Validate Registering an Account by providing only the Mandatory fields</td>
+<td></td>
+<td>9</td>
+<td>com.test.TC_RF_001@2d9caaeb</td></tr>
 </table><p>
 </body>
 </html>

@@ -17,7 +17,7 @@ public class TC_RF_009 extends Base {
 	String filepth = System.getProperty("user.dir") + "\\test_data\\excel_sheet_data\\test_data.xlsx";
 
 	@Test(description = "Validate Registering an Account by providing the existing account details ")
-	public void test1() throws InterruptedException {
+	public void tc_rf_009() throws InterruptedException {
 
 		register = new Register_Page(driver);
 		nav = new NavBar_Page(driver);
