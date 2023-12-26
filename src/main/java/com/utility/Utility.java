@@ -55,6 +55,56 @@ public class Utility {
 		}
 	}
 
+	public static String getLocator(String key) {
+		Properties properties = new Properties();
+		try (FileInputStream file = new FileInputStream(
+				System.getProperty("user.dir") + "\\locators\\locators.properties")) {
+			properties.load(file);
+			return properties.getProperty(key);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null; // Handle the exception according to your needs
+		}
+	}
+
+	public static WebElement findElement(String locator, WebDriver driver) {
+		String[] locatorInfo = locator.split("=", 2);
+		String locatorType = locatorInfo[0];
+		String locatorValue = locatorInfo[1];
+
+		switch (locatorType.toLowerCase()) {
+		case "id":
+			return driver.findElement(By.id(locatorValue));
+		case "xpath":
+			return driver.findElement(By.xpath(locatorValue));
+		case "css":
+		case "cssselector":
+			return driver.findElement(By.cssSelector(locatorValue));
+		case "name":
+			return driver.findElement(By.name(locatorValue));
+		case "classname":
+			return driver.findElement(By.className(locatorValue));
+		case "link":
+		case "linktext":
+			return driver.findElement(By.linkText(locatorValue));
+		case "partiallink":
+		case "partiallinktext":
+			return driver.findElement(By.partialLinkText(locatorValue));
+		// Add more cases for other locator types if needed
+		default:
+			throw new IllegalArgumentException("Unsupported locator type: " + locatorType);
+		}
+	}
+
+	public static WebElement getElement(String key, WebDriver driver) {
+		String locator = getLocator(key);
+		if (locator != null) {
+			return findElement(locator, driver);
+		} else {
+			throw new RuntimeException("Locator not found for key: " + key);
+		}
+	}
+
 	public static void setImplicitWait(WebDriver driver, int timeoutInSeconds) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeoutInSeconds));
 	}

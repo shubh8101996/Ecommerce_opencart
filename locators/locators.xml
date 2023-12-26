@@ -1,8 +1,0 @@
-<locators>
-	<element name="email" type="id" value="input-email" />
-	<element name="password" type="id" value="input-password" />
-	<element name="loginBtn" type="xpath" value="//button[text()='Login']" />
-	<element name="MyAccount" type="xpath" value="//span[text()='My Account']" />
-	<element name="Register" type="xpath" value="//a[text()='Register']" />
-	<element name="Login" type="xpath" value="//a[text()='Login']" />
-</locators>

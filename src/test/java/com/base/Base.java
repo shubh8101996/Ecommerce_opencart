@@ -7,10 +7,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
-import com.page_class.Login_Page;
-import com.page_class.MyAccount_Page;
-import com.page_class.NavBar_Page;
 import com.utility.Utility;
 
 public class Base {
@@ -19,9 +15,7 @@ public class Base {
 	String projectPath = System.getProperty("user.dir");
 	public String browser = Utility.getPropertyDirectly("browser");
 	public String url = Utility.getPropertyDirectly("url");
-	public static Login_Page login;
-	public static MyAccount_Page myaccount;
-	public static NavBar_Page nav;
+	
 
 	@BeforeClass(alwaysRun = true)
 	public void browserSetup() throws Exception {
@@ -47,10 +41,7 @@ public class Base {
 
 			throw new Exception("Invalid Browser Value");
 		}
-		
-		login = new Login_Page(driver);
-        myaccount = new MyAccount_Page(driver);
-        nav = new NavBar_Page(driver);
+
 	}
 
 	public static WebDriver getDriver() {
@@ -59,17 +50,17 @@ public class Base {
 
 	public static void login() {
 
-		Utility.clickElement(driver, nav.MyAccount, 20);
-		Utility.clickElement(driver, nav.Login, 10);
-		Utility.sendKeys(driver, login.email, Utility.getPropertyDirectly("username"), 10);
-		Utility.sendKeys(driver, login.password, Utility.getPropertyDirectly("password"), 10);
-		Utility.clickElement(driver, login.LoginBtn, 10);
-		Utility.assertTextEqualsByElementText(driver, myaccount.HeadingMyAccount, "My Account", 10);
+		Utility.clickElement(driver, Utility.getElement("MyAccount", driver), 20);
+		Utility.clickElement(driver, Utility.getElement("Login", driver), 20);
+		Utility.sendKeys(driver, Utility.getElement("email", driver), Utility.getPropertyDirectly("username"), 20);
+		Utility.sendKeys(driver, Utility.getElement("password", driver), Utility.getPropertyDirectly("password"), 20);
+		Utility.clickElement(driver, Utility.getElement("loginBtn", driver), 10);
+		Utility.assertTextEqualsByElementText(driver, Utility.getElement("HeadingMyAccount", driver), "My Account", 10);
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void tearUp() {
-		driver.quit();
+//		driver.quit();
 	}
 
 }
